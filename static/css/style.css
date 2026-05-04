@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.produto-card {
+    transition: transform 0.3s ease;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2d6a4f !important;
+}
+
+.btn-outline-success {
+    border-color: #2d6a4f;
+    color: #2d6a4f;
+}
+
+.btn-outline-success:hover {
+    background-color: #2d6a4f;
+    color: white;
+}

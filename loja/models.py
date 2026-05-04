@@ -5,13 +5,12 @@ from django.contrib.auth.models import User
 # MODEL 1: CATEGORIA
 # ===================
 class Categoria(models.Model):
-    """
-    Essa tabela organiza os produtos em categorias
-    Ex: Velas, sabonetes, sprays, difusores
-    """
+    # Essa tabela organiza os produtos em categorias
+    # Ex: Velas, sabonetes, sprays, difusores
+
     nome = models.CharField(max_length=100)
     descricao = models.TextField(blank=True, null=True)
-    origem = models.TextField(max)
+    origem = models.CharField(max_length=200, blank=True, null=True)
     
     class Meta:
         verbose_name = 'Categoria'
