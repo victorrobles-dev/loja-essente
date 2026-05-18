@@ -1,0 +1,80 @@
+{% extends 'loja/main.html' %}
+{% block title %} Carrinho - Loja Essenté {% endblock %}
+{% block content %}
+
+<div class="container my-5">
+    <h2 class="mb-4">Seu Carrinho 🛒</h2>
+
+    {% if carrinho|length > 0 %}
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Produto:</th>
+                    <th>Preço:</th>
+                    <th>Quantidade:</th>
+                    <th>Subtotal:</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in carrinho %}
+                <tr>
+                    <td>{{ item.nome }}</td>
+                    <td>R$ {{ item.preco }}</td>
+                    <td>{{ item.quantidade }}</td>
+                    <td>R$ {{ item.subtotal }}</td>
+                    <td>
+                        <a href="{% url 'carrinho_remover' item.produto_id %}" class="btn btn-sm btn-outline-danger">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3" class="text-end">Total:</th>
+                    <th class="text-success">R$ {{ carrinho.total }}</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+        <a href="{% url 'home' %}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Continuar comprando...
+        </a>
+        <button id="btn-finalizar" class="btn btn-success btn-lg">
+            <i class="bi bi-whatsapp"></i> Finalizar pedido pelo WhatsApp
+        </button>
+    </div>
+    {% else %}
+    <div class="text-center py-5">
+        <i class="bi bi-cart-x display-1 text-muted"></i>
+        <h3 class="text-muted mt-3">Seu carrinho está vazio</h3>
+        <a href="{% url 'home' %}" class="btn btn-success mt-3">Visualizar Produtos</a>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+document.getElementById('btn-finalizar').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    fetch('{% url "whatsapp_mensagem" %}')
+        .then(response => response.json())
+        .then(data => {
+            if (data.url) {
+                window.open(data.url, '_blank');
+            } else {
+                alert('Erro ao gerar mensagem!');
+            }
+        })
+        .catch(error => {
+            alert('Erro ao processar pedido. Tente novamente!');
+        });
+});
+</script>
+{% endblock %}
