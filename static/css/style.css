@@ -1,5 +1,24 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
 }
 
 .produto-card {
@@ -12,15 +31,15 @@ body {
 
 .navbar-brand {
     font-weight: bold;
-    color: #2d6a4f !important;
+    color: #358863 !important;
 }
 
 .btn-outline-success {
-    border-color: #2d6a4f;
-    color: #2d6a4f;
+    border-color: #358863;
+    color: #358863;
 }
 
 .btn-outline-success:hover {
-    background-color: #2d6a4f;
+    background-color: #358863;
     color: white;
 }

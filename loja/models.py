@@ -23,9 +23,8 @@ class Categoria(models.Model):
 # MODEL 2: PRODUTO
 # =================
 class Produto(models.Model):
-    
     # Tabela principal - cada produto da loja
-    
+
     nome = models.CharField(max_length = 200)
     descricao = models.TextField()
     preco = models.DecimalField(max_digits = 10, decimal_places = 2)
@@ -46,14 +45,12 @@ class Produto(models.Model):
     def __str__(self):
         return self.nome
 
-
 # =================
 # MODEL 3: CLIENTE
 # =================
 class Cliente(models.Model):
-    
     #  Cadastro dos clientes da loja
-   
+
     user = models.OneToOneField(User, on_delete = models.CASCADE, null = True, blank = True)
     nome = models.CharField(max_length = 200)
     email = models.EmailField(unique = True)
@@ -68,7 +65,6 @@ class Cliente(models.Model):
 # MODEL 4: PEDIDO
 # ================
 class Pedido(models.Model):
-    
     # Registro de cada venda realizada
     
     STATUS_CHOICES = [
