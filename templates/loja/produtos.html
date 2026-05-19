@@ -1,0 +1,50 @@
+{% extends 'loja/main.html' %}
+{% block title %}Produtos - Loja Essenté{% endblock %}
+{% block content %}
+
+<section style="background: linear-gradient(135deg, #DEC4BD, #B59C9C);" class="text-white text-center py-5">
+    <div class="container py-5">
+        <h1 class="display-4 fw-bold">✨ Nossos Produtos ✨</h1>
+        <p class="lead">Conheça nossa linha completa de aromas</p>
+    </div>
+</section>
+
+<section class="container my-5">
+    {% if produtos %}
+    <div class="row g-4">
+        {% for produto in produtos %}
+        <div class="col-md-3">
+    <div class="card border-0 shadow-sm h-100 produto-card">
+        {% if produto.imagem %}
+        <img src="{{ produto.imagem.url }}" class="card-img-top" alt="{{ produto.nome }}" style="height: 200px; object-fit: cover;">
+        {% else %}
+        <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+            <i class="bi bi-box-seam text-muted display-4"></i>
+        </div>
+        {% endif %}
+        <div class="card-body">
+            <span class="badge bg-success">{{ produto.categoria.nome }}</span>
+            <h5 class="card-title mt-2">{{ produto.nome }}</h5>
+            <p class="text-muted small">{{ produto.descricao|truncatechars:60 }}</p>
+            {% if produto.aroma %}
+            <p class="small text-muted">Aroma: {{ produto.aroma }}</p>
+            {% endif %}
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="h5 text-success">R$ {{ produto.preco }}</span>
+                <a href="{% url 'carrinho_adicionar' produto.id %}" class="btn btn-outline-success btn-sm">
+                    <i class="bi bi-cart-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-5">
+        <i class="bi bi-box-seam display-1 text-muted"></i>
+        <h3 class="text-muted">Nenhum produto cadastrado, cadastre pelo painel de administrador do Django!</h3>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
