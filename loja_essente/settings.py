@@ -71,3 +71,25 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# forçar DEBUG = False no site do Render
+
+if os.environ.get('RENDER'):
+    DEBUG = False
+else:
+    DEBUG = True
+
+if not DEBUG:
+    SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'chave-insegura')
+    ALLOWED_HOSTS = ['*']
+    CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+else:
+    ALLOWED_HOSTS = []
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
