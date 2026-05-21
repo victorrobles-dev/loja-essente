@@ -43,3 +43,12 @@ footer {
     background-color: #358863;
     color: white;
 }
+
+.categoria-card {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.categoria-card:hover {
+    transform: translateY(-5px);
+}

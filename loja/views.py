@@ -9,27 +9,28 @@ import cloudinary.uploader
 def home(request):
     produtos = Produto.objects.filter(disponivel = True).order_by('-data_cadastro')[:8]
     categorias = Categoria.objects.all()
-    
-    contexto = {
+    return render(request, 'loja/home.html', {
         'produtos': produtos,
         'categorias': categorias,
-    }
-    return render(request, 'loja/home.html', contexto)
-
+    })
+    
 # rota para a página de Sobre
 def sobre(request):
     return render(request, 'loja/sobre.html')
 
 # rota para a página de Produtos
 def produtos(request):
-    produtos = Produto.objects.filter(disponivel = True).order_by('nome')
-    categorias = Categoria.objects.all()
+    categoria_id = request.GET.get('categoria')
+    if categoria_id:
+        produtos = Produto.objects.filter(disponivel=True, categoria_id=categoria_id).order_by('nome')
+    else:
+        produtos = Produto.objects.filter(disponivel=True).order_by('nome')
     
-    contexto = {
+    categorias = Categoria.objects.all()
+    return render(request, 'loja/produtos.html', {
         'produtos': produtos,
-        'categorias': categorias
-    }
-    return render(request, 'loja/produtos.html', contexto)
+        'categorias': categorias,
+    })
 
 # teste de upload de imagens para o Cloudinary
 def test_upload(request):
