@@ -30,7 +30,8 @@ class Produto(models.Model):
     preco = models.DecimalField(max_digits = 10, decimal_places = 2)
     estoque = models.IntegerField(default = 0)
     categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
-    imagem = models.ImageField(upload_to='produtos/', blank = True, null = True)
+    # imagem = models.ImageField(upload_to='produtos/', blank = True, null = True)
+    imagem = models.URLField(blank=True, null=True, verbose_name='URL da Imagem (Cloudinary)')
     data_cadastro = models.DateTimeField(auto_now_add = True)
     disponivel = models.BooleanField(default = True)
     
