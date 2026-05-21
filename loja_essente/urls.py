@@ -14,12 +14,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.http import JsonResponse
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+import os
+
+def test_cloudinary(request):
+    return JsonResponse({
+        'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME', 'NÃO DEFINIDO'),
+        'API_KEY': os.environ.get('CLOUDINARY_API_KEY', 'NÃO DEFINIDO')[:5] + '...',
+        'API_SECRET': '***' if os.environ.get('CLOUDINARY_API_SECRET') else 'NÃO DEFINIDO',
+    })
+
 
 urlpatterns = [
+    path('test-cloud/', test_cloudinary, name='test_cloudinary'),
     path('admin/', admin.site.urls),
     path('', include('loja.urls')),
     path('carrinho/', include('carrinho.urls')),
