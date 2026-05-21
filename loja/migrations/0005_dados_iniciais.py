@@ -22,7 +22,7 @@ def criar_dados_iniciais(apps, schema_editor):
     )
     kits = Categoria.objects.create(
         nome='Kits', 
-        descricao='Kits especiais para presentear',
+        descricao='Kits especiais para presentear alguém ou a si mesmo',
         origem='Produção artesanal brasileira'
     )
     
@@ -33,19 +33,19 @@ def criar_dados_iniciais(apps, schema_editor):
         preco=29.90, estoque=50, categoria=velas, aroma='Pêssego com Damasco', peso_ml='200g', disponivel=True
     )
     Produto.objects.create(
-        nome='Vela de Baunilha',
-        descricao='Vela aromática de baunilha com notas adocicadas. Perfeita para criar um ambiente acolhedor.',
-        preco=34.90, estoque=30, categoria=velas, aroma='Baunilha', peso_ml='200g', disponivel=True
+        nome='Vela da Sorte',
+        descricao='Vela aromática de baunilha com notas adocicadas. Perfeita para criar um ambiente de prosperidade.',
+        preco=34.90, estoque=30, categoria=velas, aroma='Baunilha', peso_ml='100g', disponivel=True
     )
     Produto.objects.create(
-        nome='Sabonete de Erva Doce',
-        descricao='Sabonete artesanal com extrato natural de erva doce. Limpeza suave e perfume delicado.',
-        preco=15.90, estoque=40, categoria=sabonetes, aroma='Erva Doce', peso_ml='100g', disponivel=True
+        nome='Sabonete de Pêssego com Damasco',
+        descricao='Sabonete artesanal com extrato natural de pêssego com damasco. Limpeza suave e perfume delicado.',
+        preco=15.90, estoque=40, categoria=sabonetes, aroma='Pêssego e Damasco', peso_ml='100g', disponivel=True
     )
     Produto.objects.create(
-        nome='Sabonete de Alecrim',
-        descricao='Sabonete natural de alecrim, revigorante e refrescante para o dia a dia.',
-        preco=15.90, estoque=35, categoria=sabonetes, aroma='Alecrim', peso_ml='100g', disponivel=True
+        nome='Sabonete Líquido de Pêssego com Damasco',
+        descricao='Sabonete líquido natural de pêssego com damasco, revigorante e refrescante para o dia a dia.',
+        preco=15.90, estoque=35, categoria=sabonetes, aroma='Pêssego e Damasco', peso_ml='200ml', disponivel=True
     )
     Produto.objects.create(
         nome='Difusor de Canela',
@@ -53,19 +53,19 @@ def criar_dados_iniciais(apps, schema_editor):
         preco=24.90, estoque=25, categoria=difusores, aroma='Canela', peso_ml='150ml', disponivel=True
     )
     Produto.objects.create(
-        nome='Difusor de Eucalipto',
-        descricao='Difusor de eucalipto refrescante. Ideal para purificar e energizar ambientes.',
-        preco=24.90, estoque=20, categoria=difusores, aroma='Eucalipto', peso_ml='150ml', disponivel=True
+        nome='Difusor de Pêssego com Damasco',
+        descricao='Difusor de pêssego e damasco com aroma aconchegante. Ideal para purificar e energizar ambientes.',
+        preco=24.90, estoque=20, categoria=difusores, aroma='Pêssego e Damasco', peso_ml='150ml', disponivel=True
     )
     Produto.objects.create(
         nome='Kit Relax',
-        descricao='Kit especial com Vela de Pêssego e Damasco + Sabonete de Erva Doce + Difusor de Eucalipto.',
+        descricao='Kit especial com Vela de Pêssego e Damasco + Sabonete de Pêssego e Damasco',
         preco=59.90, estoque=15, categoria=kits, aroma='Pêssego e Damasco, Erva Doce e Eucalipto', peso_ml='Conjunto', disponivel=True
     )
     Produto.objects.create(
-        nome='Kit Aconchego',
-        descricao='Kit completo: Vela de Baunilha + Sabonete de Alecrim + Difusor de Canela.',
-        preco=64.90, estoque=10, categoria=kits, aroma='Baunilha, Alecrim e Canela', peso_ml='Conjunto', disponivel=True
+        nome='Kit Bomba de Pêssego com Damasco',
+        descricao='Kit completo: Vela de Pêssego e Damasco + 2x Sabonetes de Pêssego e Damasco + Sabonete líquido de Pêssego e Damasco + Difusor de Pêssego e Damasco.',
+        preco=99.90, estoque=10, categoria=kits, aroma='Pêssego com Damasco', peso_ml='Conjunto', disponivel=True
     )
 
 def reverter_dados(apps, schema_editor):
