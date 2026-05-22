@@ -9,6 +9,9 @@ ls -la static/ || echo "Pasta static/ não encontrada!"
 ls -la static/css/ || echo "Pasta css/ não encontrada!"
 ls -la static/img/ || echo "Pasta img/ não encontrada!"
 
+echo "=== Resetando migrations de dados ==="
+python manage.py migrate loja 0004 --fake || true
+
 echo "=== Migrações ==="
 python manage.py migrate
 

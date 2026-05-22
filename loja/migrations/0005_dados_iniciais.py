@@ -28,51 +28,51 @@ def criar_dados_iniciais(apps, schema_editor):
     
     # Produtos pré cadastrados
     Produto.objects.create(
-        nome='Vela de Pêssego com Damasco',
+        nome='Vela de Pêssego e Damasco - Tamanho M',
         descricao='Vela artesanal com óleo essencial de pêssego e damasco. Aroma suave e relaxante, ideal para momentos de tranquilidade.',
-        preco=29.90, estoque=50, categoria=velas, aroma='Pêssego com Damasco', peso_ml='200g', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/vela_M_pessego_damasco_msqtjx.jpg'
+        preco=27.00, estoque=20, categoria=velas, aroma='Pêssego e Damasco', peso_ml='100g', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/vela_M_pessego_damasco_msqtjx.jpg'
     )
 
     Produto.objects.create(
-        nome='Vela da Sorte',
+        nome='Vela da Sorte - Tamanho P',
         descricao='Vela aromática de baunilha com notas adocicadas. Perfeita para criar um ambiente de prosperidade.',
-        preco=34.90, estoque=30, categoria=velas, aroma='Baunilha', peso_ml='100g', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/vela_M_linha_sorte_ffpewq.jpg'
+        preco=19.80, estoque=20, categoria=velas, aroma='Baunilha', peso_ml='50g', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/vela_M_linha_sorte_ffpewq.jpg'
     )
 
     Produto.objects.create(
-        nome='Sabonete de Pêssego com Damasco',
+        nome='Sabonete de Pêssego e Damasco',
         descricao='Sabonete artesanal com extrato natural de pêssego com damasco. Limpeza suave e perfume delicado.',
-        preco=15.90, estoque=40, categoria=sabonetes, aroma='Pêssego e Damasco', peso_ml='100g', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/sabonete_barra_pessego_damasco_jlvrjr.jpg'
+        preco=12.90, estoque=15, categoria=sabonetes, aroma='Pêssego e Damasco', peso_ml='100g', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/sabonete_barra_pessego_damasco_jlvrjr.jpg'
     )
 
     Produto.objects.create(
-        nome='Sabonete Líquido de Pêssego com Damasco',
+        nome='Sabonete Líquido de Pêssego e Damasco',
         descricao='Sabonete líquido natural de pêssego com damasco, revigorante e refrescante para o dia a dia.',
-        preco=15.90, estoque=35, categoria=sabonetes, aroma='Pêssego e Damasco', peso_ml='200ml', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/sabonete_liquido_pessego_damasco_j5enmn.jpg'
+        preco=39.90, estoque=35, categoria=sabonetes, aroma='Pêssego e Damasco', peso_ml='250ml', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/sabonete_liquido_pessego_damasco_j5enmn.jpg'
     )
 
     Produto.objects.create(
-        nome='Difusor de Canela',
+        nome='Difusor Linha Nobre',
         descricao='Difusor aromático de canela para ambientes. Aroma quente e convidativo.',
-        preco=24.90, estoque=25, categoria=difusores, aroma='Canela', peso_ml='150ml', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382593/difusor_canela_ynfhvk.jpg'
+        preco=63.90, estoque=20, categoria=difusores, aroma='Canela', peso_ml='200ml', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382593/difusor_canela_ynfhvk.jpg'
     )
 
     Produto.objects.create(
-        nome='Difusor de Pêssego com Damasco',
-        descricao='Difusor de pêssego e damasco com aroma aconchegante. Ideal para purificar e energizar ambientes.',
-        preco=24.90, estoque=20, categoria=difusores, aroma='Pêssego e Damasco', peso_ml='150ml', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382593/difusor_pessego_damasco_id2c1w.jpg'
+        nome='Difusor de Pêssego e Damasco',
+        descricao='Difusor de pêssego com damasco com aroma aconchegante. Ideal para purificar e energizar ambientes.',
+        preco=59.90, estoque=20, categoria=difusores, aroma='Pêssego e Damasco', peso_ml='200ml', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382593/difusor_pessego_damasco_id2c1w.jpg'
     )
 
     Produto.objects.create(
         nome='Kit Relax',
         descricao='Kit especial com Vela de Pêssego e Damasco + Sabonete de Pêssego e Damasco',
-        preco=59.90, estoque=15, categoria=kits, aroma='Pêssego e Damasco, Erva Doce e Eucalipto', peso_ml='Conjunto', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/kit_sabonete_e_vela_nwwz1k.jpg'
+        preco=38.80, estoque=8, categoria=kits, aroma='Pêssego e Damasco', peso_ml='Conjunto', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/kit_sabonete_e_vela_nwwz1k.jpg'
     )
 
     Produto.objects.create(
-        nome='Kit Bomba de Pêssego com Damasco',
-        descricao='Kit completo: Vela de Pêssego e Damasco + 2x Sabonetes de Pêssego e Damasco + Sabonete líquido de Pêssego e Damasco + Difusor de Pêssego e Damasco.',
-        preco=99.90, estoque=10, categoria=kits, aroma='Pêssego com Damasco', peso_ml='Conjunto', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/kit_completo_pessego_damasco_rh4mhs.jpg'
+        nome='Kit Linha Pêssego e Damasco',
+        descricao='Kit completo: Vela de Pêssego e Damasco + Sabonete de Pêssego e Damasco + Sabonete líquido de Pêssego e Damasco + Difusor de Pêssego e Damasco.',
+        preco=137.90, estoque=8, categoria=kits, aroma='Pêssego com Damasco', peso_ml='Conjunto', disponivel=True, imagem = 'https://res.cloudinary.com/da2dzpbf6/image/upload/q_auto/f_auto/v1779382594/kit_completo_pessego_damasco_rh4mhs.jpg'
     )
 
 def reverter_dados(apps, schema_editor):
